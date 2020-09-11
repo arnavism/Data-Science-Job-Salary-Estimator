@@ -58,7 +58,7 @@ for i in range(1,100):
     
 plt.plot(alpha,error)
 
-err = tuple(zip(alpha,error))
+err = list(zip(alpha,error))
 df_err = pd.DataFrame(err, columns = ['alpha','error'])
 df_err[df_err.error == max(df_err.error)]
 
@@ -79,6 +79,8 @@ gs.best_score_
 gs.best_estimator_
 
 # test ensembles 
+
+
 tpred_lm = lm.predict(X_test)
 tpred_lml = lm_l.predict(X_test)
 tpred_rf = gs.best_estimator_.predict(X_test)
